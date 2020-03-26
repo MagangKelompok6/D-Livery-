@@ -13,6 +13,8 @@ public class cameraMovement : MonoBehaviour
     public bool isPause;
     public GameObject nyawa;
     public GameObject gameover;
+    public GameObject pausepanel;
+    public GameObject menupanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,15 +32,26 @@ public class cameraMovement : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Escape)){
             isPause = isPause==true?false:true;
+            if(menupanel.activeSelf==false){
+                if(isPause==true){
+                    Time.timeScale = 0;
+                    pausepanel.SetActive(true);
+                }
+                else{
+                    Time.timeScale = 1;
+                    pausepanel.SetActive(false);
+                }
+            }
         }
         if(zoomCamera){
             int i = (int) jumlah;
-            if( i < 3){
+            if( i < 2){
                 Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize,10,speed*Time.deltaTime);
                 Cam.transform.position = Vector3.Lerp(Cam.transform.position,Target[0], speed*Time.deltaTime);
-            }else  if(isPause==true){
-                
-            }else if(nyawa.GetComponent<health>().healths==0){
+            }else if(isPause){
+
+            }
+            else if(nyawa.GetComponent<health>().healths==0){
                 gameover.SetActive(true);
             }
             else{

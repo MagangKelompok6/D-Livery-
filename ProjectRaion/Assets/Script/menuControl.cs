@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class menuControl : MonoBehaviour
 {
     public GameObject pausepanel;
-    public GameObject menupanel;
+    public GameObject score;
+    public GameObject bar;
     public bool isPause;
+    public Camera cam;
 
     public void exitGame(){
         Debug.Log("Quit Game");
@@ -20,25 +22,19 @@ public class menuControl : MonoBehaviour
         SceneManager.LoadScene("pre progress");
     }
 
+    public void restartGame(){
+        Time.timeScale = 1;
+        cam.GetComponent<cameraMovement>().transform.position = new Vector3(-10,2.393159f,-100);;
+        cam.GetComponent<cameraMovement>().isPause = false;
+        pausepanel.SetActive(false);
+        score.GetComponent<scoring>().jumlah = 0;
+    }
+
     void Start(){
-        isPause = false;
     }
 
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Escape)){
-            if(menupanel.activeSelf==false){
-                isPause = isPause==true?false:true;
-                if(isPause==true){
-                    Time.timeScale = 0;
-                    pausepanel.SetActive(true);
-                }
-                else{
-                    Time.timeScale = 1;
-                    pausepanel.SetActive(false);
-            
-                }
-            }
-        }
+        
     }
 }
