@@ -18,11 +18,15 @@ public class scoring : MonoBehaviour
     void Start()
     {
         jumlah = 0f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(jumlah > 9999){
+            jumlah = 9999;
+        }
         if(jalan){
             int l = (int) jumlah;
             barisan = (l+"").PadLeft(4,'0');
