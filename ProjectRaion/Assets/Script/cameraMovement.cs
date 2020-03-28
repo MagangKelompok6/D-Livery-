@@ -15,13 +15,31 @@ public class cameraMovement : MonoBehaviour
     public GameObject gameover;
     public GameObject pausepanel;
     public GameObject menupanel;
+    public GameObject bar;
+    public GameObject score;
     // Start is called before the first frame update
     void Start()
     {
         jumlah = 0f;
         penambahan = 2f;
         Cam = Camera.main;
-        zoomCamera = false;
+        if(PlayerPrefs.HasKey("isQuit")){
+            if(PlayerPrefs.GetInt("isQuit")==0){
+                zoomCamera = true;
+                isPause = false;
+                Cam.GetComponent<cameraMovement>().zoomCamera = true;
+                menupanel.SetActive(false);
+                bar.SetActive(true);
+                score.GetComponent<scoring>().jalan = true;
+                PlayerPrefs.SetInt("isQuit",1);
+            }else{
+                zoomCamera = false;
+                PlayerPrefs.SetInt("isQuit",1);
+            }
+        }else{
+            zoomCamera = false;
+            PlayerPrefs.SetInt("isQuit",1);
+        }
         isPause = false;
         nyawa = GameObject.Find("Player");
         Time.timeScale = 1;
