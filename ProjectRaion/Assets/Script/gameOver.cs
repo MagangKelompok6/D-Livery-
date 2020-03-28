@@ -10,6 +10,7 @@ public class gameOver : MonoBehaviour
         if(other.CompareTag("Player")){
             other.gameObject.GetComponent<health>().healths--;
         }
+        GetComponent<AudioSource>().Play();
     }
     
     void Start() {

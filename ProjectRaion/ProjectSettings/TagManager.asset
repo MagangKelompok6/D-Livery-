@@ -9,6 +9,7 @@ TagManager:
   - huruf1
   - huruf2
   - huruf3
+  - background
   layers:
   - Default
   - TransparentFX

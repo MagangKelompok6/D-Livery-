@@ -17,6 +17,8 @@ public class cameraMovement : MonoBehaviour
     public GameObject menupanel;
     public GameObject bar;
     public GameObject score;
+    public Sprite blur;
+    private GameObject[] background;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +72,13 @@ public class cameraMovement : MonoBehaviour
 
             }
             else if(nyawa.GetComponent<health>().healths==0){
+                background = GameObject.FindGameObjectsWithTag("background");
+                foreach (GameObject backgrounds in background)
+                {
+                    backgrounds.GetComponent<SpriteRenderer>().sprite = blur;
+                }
                 gameover.SetActive(true);
+                bar.SetActive(false);
             }
             else{
                 transform.position += new Vector3(.2f,0,0);
