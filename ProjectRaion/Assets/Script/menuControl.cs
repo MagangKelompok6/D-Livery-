@@ -11,6 +11,8 @@ public class menuControl : MonoBehaviour
     public GameObject bar;
     public bool isPause;
     public Camera cam;
+    public GameObject player;
+    public GameObject generator;
 
     public void exitGame(){
         Debug.Log("Quit Game");
@@ -24,7 +26,10 @@ public class menuControl : MonoBehaviour
 
     public void restartGame(){
         Time.timeScale = 1;
-        cam.GetComponent<cameraMovement>().transform.position = new Vector3(-10,2.393159f,-100);;
+        cam.GetComponent<cameraMovement>().transform.position = new Vector3(-10,2.393159f,-100);
+        player.transform.position = new Vector3(-18, 2.393159f,100);
+        generator.AddComponent<lvl>().enabled=true;
+        
         cam.GetComponent<cameraMovement>().isPause = false;
         pausepanel.SetActive(false);
         score.GetComponent<scoring>().jumlah = 0;

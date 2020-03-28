@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class powerUp : MonoBehaviour
 {
-  
+    private GameObject powerupGenerator;
+
+    private void Awake()
+    {
+        powerupGenerator = GameObject.Find("PowerupGenerator");
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -19,5 +24,6 @@ public class powerUp : MonoBehaviour
 
         player.gameObject.GetComponent<health>().healths++;
         Destroy(gameObject);
+        powerupGenerator.GetComponent<powerupGenerator>().powerupBool = false;
     }
 }

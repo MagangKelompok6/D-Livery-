@@ -617,9 +617,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3311213451756170528}
   - component: {fileID: 7855470315934919204}
-  - component: {fileID: 8067611443162713070}
+  - component: {fileID: 6497943838621859576}
   m_Layer: 0
-  m_Name: batas bawah
+  m_Name: Bottom End Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.59365463, y: 0.65924644}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -663,9 +663,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 3}
+  m_Size: {x: 27.441048, y: 1.6815071}
   m_EdgeRadius: 0
---- !u!114 &8067611443162713070
+--- !u!114 &6497943838621859576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6674848702378767206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a7d825361fe004088aaf3de8af7fb9, type: 3}
+  m_Script: {fileID: 11500000, guid: daabda16f95d33f4f8f85dfe9afd3084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   over: 0
