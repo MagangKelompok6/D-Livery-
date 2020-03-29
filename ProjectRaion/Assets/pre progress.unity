@@ -515,6 +515,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1411655302}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &157218981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157218980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6afd1435d807f4f96c31dbd34736e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &157218987
 Animator:
   serializedVersion: 3
@@ -1538,7 +1550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreGenerator: {fileID: 549874012}
-  powerUp: {fileID: 1992018394}
+  powerUp: {fileID: 5449577776173533028, guid: 043f12985b90df241943a1e163fa4498, type: 3}
   generator: {fileID: 1595915616}
   player: {fileID: 157218980}
   powerupBool: 0
