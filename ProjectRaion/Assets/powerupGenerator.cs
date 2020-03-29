@@ -16,7 +16,7 @@ public class powerupGenerator : MonoBehaviour
     void Update()
     {
         currentHealth = player.GetComponent<health>().healths;
-        currentScore = System.Convert.ToInt32(scoreGenerator.GetComponent<scoring>().jumlah) % 10;
+        currentScore = System.Convert.ToInt32(scoreGenerator.GetComponent<scoring>().jumlah) % 50;
         lastEndPosition = generator.GetComponent<lvl>().lastEndPosition;
         lastEndPosition.y += 9;
         if (currentScore==0 && powerupBool==false && currentHealth < 2)

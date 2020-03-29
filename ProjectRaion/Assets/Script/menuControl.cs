@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class menuControl : MonoBehaviour
 {
     public GameObject pausepanel;
-    public Camera cam;
     public GameObject mainmenu;
     public GameObject score;
     public GameObject bar;
