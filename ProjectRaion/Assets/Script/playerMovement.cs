@@ -17,6 +17,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         midAirJump = jumpValue;
+        Physics2D.IgnoreLayerCollision(9, 10, true);
     }
 
     // Update is called once per frame
@@ -41,4 +42,5 @@ public class playerMovement : MonoBehaviour
             rb.velocity = Vector2.up * jump;
         }
     }
+
 }
