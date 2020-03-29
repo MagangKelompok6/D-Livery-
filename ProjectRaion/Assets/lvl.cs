@@ -12,13 +12,13 @@ public class lvl : MonoBehaviour
     [SerializeField] private Transform lvl4;
     [SerializeField] private Transform lvl5;
     [SerializeField] private GameObject player;
-    private Vector3 lastEndPosition;
-    void Awake()
+    public Vector3 lastEndPosition;
+    public void Awake()
     {
         lastEndPosition = startLvl.Find("EndPosition").position;
         spawn();
     }
-    private void Update()
+    public void Update()
     {
 
         if (Vector3.Distance(player.transform.position, lastEndPosition) < playerDistance)
@@ -27,7 +27,7 @@ public class lvl : MonoBehaviour
         }
 
     }
-    void spawn()
+    public void spawn()
     {
         Transform[] listLvl = { lvl1, lvl2, lvl3, lvl4, lvl5 };
         Transform randomPart = listLvl[Random.Range(0, listLvl.Length)];

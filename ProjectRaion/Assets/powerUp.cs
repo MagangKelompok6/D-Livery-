@@ -8,6 +8,7 @@ public class powerUp : MonoBehaviour
     AudioSource audio;
     private bool isPower;
     Renderer rend;
+    private GameObject powerupGenerator;
 
     void Start(){
         isPower = false;
@@ -16,6 +17,10 @@ public class powerUp : MonoBehaviour
         rend.enabled = true;
     }
 
+    private void Awake()
+    {
+        powerupGenerator = GameObject.Find("PowerupGenerator");
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         isPower= true;
@@ -41,5 +46,6 @@ public class powerUp : MonoBehaviour
         }else{
             player.gameObject.GetComponent<health>().healths++;
         }
+        powerupGenerator.GetComponent<powerupGenerator>().powerupBool = false;
     }
 }

@@ -12,6 +12,9 @@ public class menuControl : MonoBehaviour
     public GameObject score;
     public GameObject bar;
     public bool isPause;
+    public Camera cam;
+    public GameObject player;
+    public GameObject generator;
 
     public void exitGame(){
         Debug.Log("Quit Game");
